@@ -8,5 +8,6 @@ namespace Registromigrantes.shared
 {
     internal class Formulario
     {
+
     }
 }
