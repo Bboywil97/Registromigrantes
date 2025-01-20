@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registromigrantes", "Regist
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registromigrantes.Client", "Registromigrantes\Registromigrantes.Client\Registromigrantes.Client.csproj", "{FDEE852D-D25E-42AF-BAEE-66482DFCB747}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Registromigrantes.shared", "Registromigrantes.shared\Registromigrantes.shared.csproj", "{67CF569E-7565-450D-BB5A-FD422A75F23E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FDEE852D-D25E-42AF-BAEE-66482DFCB747}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDEE852D-D25E-42AF-BAEE-66482DFCB747}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDEE852D-D25E-42AF-BAEE-66482DFCB747}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67CF569E-7565-450D-BB5A-FD422A75F23E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67CF569E-7565-450D-BB5A-FD422A75F23E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67CF569E-7565-450D-BB5A-FD422A75F23E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67CF569E-7565-450D-BB5A-FD422A75F23E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
