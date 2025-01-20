@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-﻿@page "/Login"
-=======
 @page "/"
->>>>>>> 13518962e4c73db6562757c7079b33f980cf252c
+@inject HttpClient Http
 <h3>RegistroMigrantes</h3>
 
 <form>
@@ -36,5 +33,15 @@
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @code {
+    string ConexionServidor = "En espera";
+    async Task ProbarConexion()
+    {
+        var respuesta = await Http.GetStringAsync("https://localhost:44377/api/Formulario/ConexionServidor");
 
+        ConexionServidor = "Conectado al servidor";
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        await ProbarConexion();
+    }
 }
