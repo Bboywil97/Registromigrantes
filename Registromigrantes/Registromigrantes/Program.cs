@@ -1,5 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using Registromigrantes.Client.Pages;
 using Registromigrantes.Components;
+using Registromigrantes.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,9 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 builder.Services.AddControllers();
 builder.Services.AddHttpClient();
+builder.Services.AddDbContext<AplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

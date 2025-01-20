@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Registromigrantes.Data;
 
 namespace Registromigrantes.Controllers
 {
@@ -7,10 +9,32 @@ namespace Registromigrantes.Controllers
     [ApiController]
     public class FormularioController : ControllerBase
     {
-        [HttpGet("ConexionServidor")]
-        public async Task<string> ConexionServidor()
+
+        private readonly AplicationDbContext _context;
+        
+        public FormularioController(AplicationDbContext context)
         {
-            return "Conexión exitosa";
+            _context = context;
+        }
+
+        [HttpGet("ConexionServidor")]
+        public async Task<ActionResult<string>> ConexionServidor()
+        {
+            return "Conexión exitosa con el servidor";
+        }
+
+        [HttpGet("ConexionFormulario")]
+        public async Task<ActionResult<string>> ConexionFormulario()
+        {
+            try
+            {
+                var respuesta = await _context.Formulario.ToListAsync();
+                return "Conexión exitosa con la base de datos";
+            }
+            catch (Exception ex)
+            {
+                return $"Error de conexión: {ex.Message}";
+            }
         }
     }
 }
