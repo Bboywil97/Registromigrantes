@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Registromigrantes.shared
 {
-    internal class Login
+    public class Login
     {
         public int Id { get; set; }
         public string Usuario { get; set; }

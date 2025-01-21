@@ -32,13 +32,22 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<p>
+    @ConexionFormulario
+</p>
+<p>
+    @ConexionServidor
+</p>
 @code {
     string ConexionServidor = "En espera";
+    string ConexionFormulario = "En espera";
     async Task ProbarConexion()
     {
         var respuesta = await Http.GetStringAsync("https://localhost:44377/api/Formulario/ConexionServidor");
+        var respuestaFormulario = await Http.GetStringAsync("https://localhost:44377/api/Formulario/ConexionFormulario");
 
-        ConexionServidor = "Conectado al servidor";
+        ConexionServidor = respuesta;
+        ConexionFormulario = respuestaFormulario;
     }
     protected override async Task OnInitializedAsync()
     {
