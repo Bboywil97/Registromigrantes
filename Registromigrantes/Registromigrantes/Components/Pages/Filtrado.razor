@@ -1,1 +1,79 @@
-﻿
+﻿@page "/Filtrado"
+@using Registromigrantes.shared
+@inject HttpClient Http
+
+<h3>Filtrar Formularios</h3>
+
+<div class="container">
+    <form class="form-inline">
+        <div class="form-group mb-2">
+            <label for="nombre" class="sr-only">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" @bind="nombre">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="fechaInicio" class="sr-only">Fecha Inicio</label>
+            <input type="date" class="form-control" id="fechaInicio" @bind="fechaInicio">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+            <label for="fechaFin" class="sr-only">Fecha Fin</label>
+            <input type="date" class="form-control" id="fechaFin" @bind="fechaFin">
+        </div>
+        <button type="button" class="btn btn-primary mb-2" @onclick="Filtrar">Filtrar</button>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Edad</th>
+                <th>Ocupación Previa</th>
+                <th>Ocupación Deseada</th>
+                <th>Lugar de Origen</th>
+                <th>Observaciones</th>
+                <th>Fecha de Creación</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var formulario in formulariosFiltrados)
+            {
+                /*<tr>
+                    <td>@formulario.Id</td>
+                    <td>@formulario.Nombre</td>
+                    <td>@formulario.Apellidos</td>
+                    <td>@formulario.Edad</td>
+                    <td>@formulario.OcupacionPrevia</td>
+                    <td>@formulario.OcupacionDeseada</td>
+                    <td>@formulario.LugarOrigen</td>
+                    <td>@formulario.Observaciones</td>
+                    <td>@formulario.FechaCreacion.ToString("dd/MM/yyyy")</td>
+                </tr>*/
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+    private string nombre;
+    private DateTime? fechaInicio;
+    private DateTime? fechaFin;
+    private List<Formulario> formularios = new List<Formulario>();
+    private List<Formulario> formulariosFiltrados = new List<Formulario>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Cargar los formularios desde una API o base de datos
+        /*formularios = await Http.GetFromJsonAsync<List<Formulario>>("api/formularios");
+        formulariosFiltrados = formularios;*/
+    }
+
+    private void Filtrar()
+    {
+        /*formulariosFiltrados = formularios.Where(f =>
+            (string.IsNullOrEmpty(nombre) || f.Nombre.Contains(nombre, StringComparison.OrdinalIgnoreCase)) &&
+            (!fechaInicio.HasValue || f.FechaCreacion >= fechaInicio.Value) &&
+            (!fechaFin.HasValue || f.FechaCreacion <= fechaFin.Value)
+        ).ToList();*/
+    }
+}
