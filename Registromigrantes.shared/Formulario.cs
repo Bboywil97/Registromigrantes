@@ -17,5 +17,6 @@ namespace Registromigrantes.shared
         public string OcupacionDeseada { get; set; }
         public string LugarOrigen { get; set; }
         public string Observaciones { get; set; }
+        public DateTime FechaCreacion { get; set; }
     }
 }
