@@ -38,7 +38,7 @@
         <tbody>
             @foreach (var formulario in formulariosFiltrados)
             {
-                /*<tr>
+                <tr>
                     <td>@formulario.Id</td>
                     <td>@formulario.Nombre</td>
                     <td>@formulario.Apellidos</td>
@@ -48,7 +48,7 @@
                     <td>@formulario.LugarOrigen</td>
                     <td>@formulario.Observaciones</td>
                     <td>@formulario.FechaCreacion.ToString("dd/MM/yyyy")</td>
-                </tr>*/
+                </tr>
             }
         </tbody>
     </table>
@@ -64,16 +64,16 @@
     protected override async Task OnInitializedAsync()
     {
         // Cargar los formularios desde una API o base de datos
-        /*formularios = await Http.GetFromJsonAsync<List<Formulario>>("api/formularios");
-        formulariosFiltrados = formularios;*/
+        formularios = await Http.GetFromJsonAsync<List<Formulario>>("api/formularios");
+        formulariosFiltrados = formularios;
     }
 
     private void Filtrar()
     {
-        /*formulariosFiltrados = formularios.Where(f =>
+        formulariosFiltrados = formularios.Where(f =>
             (string.IsNullOrEmpty(nombre) || f.Nombre.Contains(nombre, StringComparison.OrdinalIgnoreCase)) &&
             (!fechaInicio.HasValue || f.FechaCreacion >= fechaInicio.Value) &&
             (!fechaFin.HasValue || f.FechaCreacion <= fechaFin.Value)
-        ).ToList();*/
+        ).ToList();
     }
 }

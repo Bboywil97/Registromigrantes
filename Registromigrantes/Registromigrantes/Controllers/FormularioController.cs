@@ -2,6 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Registromigrantes.Data;
+using Registromigrantes.shared;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Registromigrantes.Controllers
 {
@@ -9,9 +12,8 @@ namespace Registromigrantes.Controllers
     [ApiController]
     public class FormularioController : ControllerBase
     {
-
         private readonly AplicationDbContext _context;
-        
+
         public FormularioController(AplicationDbContext context)
         {
             _context = context;
@@ -36,5 +38,20 @@ namespace Registromigrantes.Controllers
                 return $"Error de conexión: {ex.Message}";
             }
         }
+
+        [HttpGet]
+        public async Task<ActionResult<List<Formulario>>> GetFormularios()
+        {
+            try
+            {
+                var formularios = await _context.Formulario.ToListAsync();
+                return Ok(formularios);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error al obtener los datos: {ex.Message}");
+            }
+        }
     }
 }
+

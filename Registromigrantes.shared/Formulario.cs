@@ -10,7 +10,7 @@ namespace Registromigrantes.shared
 {
     public class Formulario
     {
-        public int Id { get; set; } // Asegúrate de que la propiedad se llame 'Id' con mayúscula
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public int Edad { get; set; }
@@ -18,7 +18,11 @@ namespace Registromigrantes.shared
         public string OcupacionDeseada { get; set; }
         public string LugarOrigen { get; set; }
         public string Observaciones { get; set; }
+
         public DateTime FechaCreacion { get; set; }
+
+        public DateTime Fecha { get; set; } 
+
     }
 
     public class FormularioService
@@ -56,3 +60,5 @@ namespace Registromigrantes.shared
 
     }
 }
+
+
