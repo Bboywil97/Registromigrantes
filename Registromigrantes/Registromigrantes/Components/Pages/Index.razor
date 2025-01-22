@@ -2,46 +2,59 @@
 @inject HttpClient Http
 
 <div class="d-flex justify-content-between align-items-center mb-3">
-    <h3>RegistroMigrantes</h3>
+    <h3 style="color: #800020;">Ingreso de Datos</h3>
     <a href="/login" class="btn btn-outline-primary">Iniciar Sesión</a>
 </div>
 
-<form>
+<form style="background-color: #f9f3f3; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
     <div class="form-group">
-        <label for="Nombre">Nombre(s)</label>
-        <input type="text" class="form-control" id="Nombre" />
-        <label for="Apellidos">Apellidos</label>
-        <input type="text" class="form-control" id="Apellidos" />
+        <label for="Nombre" style="color: #800020;">Nombre(s)</label>
+        <input type="text" class="form-control" id="Nombre" style="border-color: #800020;" />
 
-        <label for="Edad">Edad</label>
-        <input type="number" class="form-control" id="Apellidos" />
+        <label for="Apellidos" style="color: #800020;">Apellidos</label>
+        <input type="text" class="form-control" id="Apellidos" style="border-color: #800020;" />
 
-        <label for="Direccion">Direccion</label>
-        <input type="text" class="form-control" id="Dirección" />
-        <label for="Telefono">Teléfono</label>
-        <input type="number" class="form-control" id="Telefono" />
-        <label for="Correo">Correo</label>
-        <input type="email" class="form-control" id="Correo" />
-        <label for="Procedencia">Lugar de procendica</label>
-        <input type="text" class="form-control" id="Procedencia" />
-        <label for="Dedicaba">¿A qué se dedicaba?</label>
-        <input type="text" class="form-control" id="Dedeicaba" />
-        <label for="Hablidades">¿A qué le gustaría dedicarse?</label>
-        <input type="text" class="form-control" id="Habilidades" />
+        <label for="Edad" style="color: #800020;">Edad</label>
+        <input type="number" class="form-control" id="Edad" style="border-color: #800020;" />
 
+        <label for="Direccion" style="color: #800020;">Direccion</label>
+        <input type="text" class="form-control" id="Direccion" style="border-color: #800020;" />
+
+        <label for="Telefono" style="color: #800020;">Teléfono</label>
+        <input type="number" class="form-control" id="Telefono" style="border-color: #800020;" />
+
+        <label for="Correo" style="color: #800020;">Correo</label>
+        <input type="email" class="form-control" id="Correo" style="border-color: #800020;" />
+
+        <label for="Procedencia" style="color: #800020;">Lugar de procedencia</label>
+        <input type="text" class="form-control" id="Procedencia" style="border-color: #800020;" />
+
+        <label for="Dedicaba" style="color: #800020;">¿A qué se dedicaba?</label>
+        <input type="text" class="form-control" id="Dedicaba" style="border-color: #800020;" />
+
+        <label for="Habilidades" style="color: #800020;">¿A qué le gustaría dedicarse?</label>
+        <input type="text" class="form-control" id="Habilidades" style="border-color: #800020;" />
     </div>
+
     <div class="form-group">
-        <label for="Observaciones">Observaciones</label>
-        <textarea class="form-control" id="Observaciones" rows="3"></textarea>
+        <label for="Observaciones" style="color: #800020;">Observaciones</label>
+        <textarea class="form-control" id="Observaciones" rows="3" style="border-color: #800020;"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <br />
+    <br />
+
+    <button type="submit" class="btn btn-primary" style="background-color: #800020; border-color: #800020;">Submit</button>
 </form>
+
+<br />
 <p>
     @ConexionFormulario
 </p>
 <p>
     @ConexionServidor
 </p>
+
 @code {
     string ConexionServidor = "En espera";
     string ConexionFormulario = "En espera";
